@@ -1,4 +1,4 @@
-说明：该项目来自于Spring Data JPA官网提供的教程，在此只是作了一个关于maven启动程序的适配
+说明：该项目来自于Spring Data JPA官网提供的教程，在此只是作了一个关于maven启动程序的适配，删除了initial模块，这个模块并没有什么实际内容，只是一个空的SpringBoot工程
 :toc:
 :tabsize: 4
 :icons: font
@@ -105,13 +105,6 @@ Now you can wire up this example and see what it looks like!
 Spring Initializr creates a simple class for the application. The following listing shows
 the class that Initializr created for this example (in
 `src/main/java/com/example/accessingdatajpa/AccessingDataJpaApplication.java`):
-
-====
-[source,java,tabsize=2]
-----
-include::initial/src/main/java/com/example/accessingdatajpa/AccessingDataJpaApplication.java[]
-----
-====
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/spring-boot-application-new-path.adoc[]
 
