@@ -1,4 +1,4 @@
-package com.example.accessingdatajpa;
+package com.example.accessingdatajpa.domain;
 
 
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	private String firstName;
 	private String lastName;

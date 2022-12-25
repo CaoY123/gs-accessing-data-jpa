@@ -16,30 +16,46 @@
 
 package com.example.accessingdatajpa;
 
+import com.example.accessingdatajpa.dao.CustomerRepository;
+import com.example.accessingdatajpa.domain.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DataJpaTest
+//@DataJpaTest
+@SpringBootTest
 public class CustomerRepositoryTests {
-	@Autowired
-	private TestEntityManager entityManager;
+//	@Autowired
+//	private TestEntityManager entityManager;
 
 	@Autowired
-	private CustomerRepository customers;
+	private CustomerRepository customerRepository;
 
 	@Test
 	public void testFindByLastName() {
 		Customer customer = new Customer("first", "last");
-		entityManager.persist(customer);
+//		entityManager.persist(customer);
 
-		List<Customer> findByLastName = customers.findByLastName(customer.getLastName());
+		List<Customer> findByLastName = customerRepository.findByLastName(customer.getLastName());
 
 		assertThat(findByLastName).extracting(Customer::getLastName).containsOnly(customer.getLastName());
+	}
+
+	@Test
+	public void testSave() {
+
+		Customer customer = new Customer("李", "四");
+		customerRepository.save(customer);
+	}
+
+	@Test
+	public void testGet() {
+
+		List<Customer> customers = customerRepository.findByFirstName("李");
+		customers.forEach(System.out::println);
 	}
 }
