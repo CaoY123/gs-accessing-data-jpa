@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.accessingdatajpa;
+package com.example.accessingdatajpa.dao;
 
 import com.example.accessingdatajpa.dao.CustomerRepository;
 import com.example.accessingdatajpa.domain.Customer;
