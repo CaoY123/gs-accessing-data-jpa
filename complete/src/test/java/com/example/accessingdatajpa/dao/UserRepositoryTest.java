@@ -1,4 +1,4 @@
-package com.example.accessingdatajpa;
+package com.example.accessingdatajpa.dao;
 
 import com.example.accessingdatajpa.dao.UserRepository;
 import com.example.accessingdatajpa.domain.Account;

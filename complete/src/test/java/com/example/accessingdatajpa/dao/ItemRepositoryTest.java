@@ -1,4 +1,4 @@
-package com.example.accessingdatajpa;
+package com.example.accessingdatajpa.dao;
 
 import com.example.accessingdatajpa.dao.ItemRepository;
 import com.example.accessingdatajpa.domain.Item;
@@ -37,7 +37,7 @@ public class ItemRepositoryTest {
 
     @Test
     public void testFind() {
-        Optional<Item> optional = itemRepository.findById(1);
+        Optional<Item> optional = itemRepository.findById(2);
         Item item = optional.get();
         System.out.println(item);
     }
